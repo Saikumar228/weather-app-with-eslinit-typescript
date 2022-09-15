@@ -16,8 +16,6 @@ import { getItem } from "../helpers/SessionStorage";
 import { Loading } from "./Loading";
 import { Error } from "./Error";
 
-type WeatherDataType = any;
-
 const WeatherDetails = () => {
   const [isRotate, setIsRotate] = useState(false);
 
@@ -26,7 +24,7 @@ const WeatherDetails = () => {
     weatherDispatch?: Function;
   } = useContext(GlobalContext);
   const { weatherState } = weatherObject;
-  const weatherData: WeatherDataType = weatherState?.weatherData;
+  const weatherData: any = weatherState?.weatherData;
   const forcastData: any = weatherState?.forcastData;
   const isLoading: any = weatherState?.isLoading;
   const isError: any = weatherState?.isError;
