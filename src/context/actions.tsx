@@ -25,7 +25,6 @@ export const getDataError = () => {
 
 export const getWeatherByLocation = () => (dispatch: Function) => {
   const success = async (position: any) => {
-    console.log(position);
     const { latitude, longitude } = position?.coords;
     dispatch(getDataLoading());
     await axios
@@ -40,7 +39,6 @@ export const getWeatherByLocation = () => (dispatch: Function) => {
             `/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=metric&appid=${weatherAppAPI}`,
           )
           .then((res) => {
-            console.log(res);
             forcastData = res.data.daily;
           });
         const payload = { weatherData, forcastData };
