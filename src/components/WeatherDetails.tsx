@@ -16,7 +16,7 @@ import { getItem } from "../helpers/SessionStorage";
 import { Loading } from "./Loading";
 import { Error } from "./Error";
 
-type WeatherDataType = Object | any;
+type WeatherDataType = any;
 
 const WeatherDetails = () => {
   const [isRotate, setIsRotate] = useState(false);
