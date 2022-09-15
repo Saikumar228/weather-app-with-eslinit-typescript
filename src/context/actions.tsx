@@ -24,8 +24,9 @@ export const getDataError = () => {
 };
 
 export const getWeatherByLocation = () => (dispatch: Function) => {
-  const success = async (position: any) => {
-    const { latitude, longitude } = position?.coords;
+  const success = async (position: any): Promise<void> => {
+    const { latitude, longitude }: { latitude: string; longitude: string } =
+      position?.coords;
     dispatch(getDataLoading());
     await axios
       .get(`/weather?lat=${latitude}&lon=${longitude}&appid=${weatherAppAPI}`)
@@ -47,17 +48,16 @@ export const getWeatherByLocation = () => (dispatch: Function) => {
         notificationHandler("Your location weather updated", "success");
       })
       .catch((err) => {
-        // console.log("res.status", err.status);
+        console.log(err);
         dispatch(getDataError());
         notificationHandler("Your location weather not updated", "error");
       });
   };
 
   const error = (err: any) => {
-    // console.warn(`ERROR(${err.code}): ${err.message}`);
+    console.log(err);
     notificationHandler("Please turn on your location", "error");
   };
-
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   navigator.geolocation.getCurrentPosition(success, error);
 };
@@ -87,6 +87,7 @@ export const getWeatherByCity =
         notificationHandler("City weather data updated", "success");
       })
       .catch((err) => {
+        console.log(err);
         dispatch(getDataError());
         notificationHandler("City weather data doesn't exist", "error");
       });
@@ -113,7 +114,7 @@ export const syncData = (city: string) => async (dispatch: Function) => {
       notificationHandler("Data sync successfully", "success");
     })
     .catch((err) => {
-      // console.log("res.status", err.status);
+      console.log("res.status", err.status);
       dispatch(getDataError());
       notificationHandler("City weather data doesn't exist", "error");
     });

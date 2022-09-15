@@ -6,11 +6,10 @@ import { ForcastModal } from "./ForcastModal";
 import { dateFormat } from "../helpers/ExtraFunctions";
 
 interface ForcastDataType {
-  key: number;
   data: Object | any;
 }
 
-export const Forcast = ({ key, data }: ForcastDataType) => {
+export const Forcast = ({ data }: ForcastDataType) => {
   const { date, day } = dateFormat(data.dt);
   return (
     <>

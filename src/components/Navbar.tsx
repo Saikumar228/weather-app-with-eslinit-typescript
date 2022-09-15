@@ -14,7 +14,7 @@ function Navbar() {
   const [city, setCity] = useState<Citytype>("");
 
   const handleWeatherByCity = () => {
-    getWeatherByCity(city)(weatherObject.weatherDispatch!);
+    void getWeatherByCity(city)(weatherObject.weatherDispatch!);
   };
   const handleLocationData = () => {
     getWeatherByLocation()(weatherObject.weatherDispatch!);

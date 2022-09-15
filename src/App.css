@@ -114,11 +114,8 @@
   box-shadow: 0px 0px 30px 6px #e2e2e2;
   border-radius: 30px;
   height: 300px;
-  /* margin-right: 30px !important; */
-  /* width: 70% !important; */
 }
 .map-container {
-  /* width: 100%; */
   box-shadow: 0px 0px 30px 6px #e2e2e2;
   border-radius: 30px;
   height: 300px;
@@ -185,8 +182,6 @@
   border-radius: 30px;
   box-shadow: 0px 0px 30px 6px #e2e2e2;
   height: 200px;
-  /* width: 160px !important; */
-  /* margin-right: 16px; */
   padding: 0px !important;
 }
 .date-day-card {
@@ -229,12 +224,6 @@
   justify-content: center;
   height: 87%;
 }
-/* .modal-content-card {
-  width: 100% !important;
-} */
-/* .modal-body-details {
-  width: 300px;
-} */
 .modal-date-day-card {
   padding: 5px;
   background-color: #5e82f4;
@@ -243,6 +232,16 @@
   margin-bottom: 5%;
   margin-left: 5%;
   margin-right: 5%;
+}
+.error-weather {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+.error-image {
+  width: 50%;
 }
 .iconRotate {
   animation: iconRotator 1s linear 0s 1;
